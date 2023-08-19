@@ -35,6 +35,7 @@
 * ElasticSearch
 * https://www.django-rest-framework.org/api-guide/views/#function-based-views, API View, Generic View, Function Based
 * Views / Viewsets / Generic Views / API View / Model ViewSets: Class and Function Based
+* Create an endpoint with normal api line by line
 * The Browsable API
 * CRUD & Endpoints
 * Search_fields -> url de, querystrings, queryset filter ve search
