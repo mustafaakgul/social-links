@@ -90,3 +90,9 @@ fabric.properties
 !.idea/runConfigurations
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm+all
+
+
+# Custom
+# .env
+__pycache__
+db.sqlite3
