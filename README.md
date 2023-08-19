@@ -48,6 +48,9 @@
 * api/comment/list?q=12    12. post a ait yorumlar
 * Timestamped & profile models: timestamped common models, profile model, signals
 * Custom User: Auth Custom User, User Manager, Auth Token
+* Track, https://treblle.com/
+* https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/
+* https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design
 
 ## Tools
 * black -> pip install black, black views.py
