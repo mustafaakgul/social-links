@@ -1,0 +1,1 @@
+let Django publish static files, In production NGINX
