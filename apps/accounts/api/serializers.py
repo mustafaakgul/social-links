@@ -9,7 +9,18 @@ from apps.accounts.models import Profile
 class ProfileSerializer(ModelSerializer):
     class Meta:
         model = Profile
-        fields = ('id', 'note','twitter')
+        fields = (
+            'id',
+            'bio',
+            'birth_date',
+            'location',
+            'website',
+            'linkedin',
+            'instagram',
+            'tiktok',
+            'twitter',
+            'facebook'
+        )
 
 
 class UserSerializer(ModelSerializer):
@@ -17,7 +28,13 @@ class UserSerializer(ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id','first_name','last_name','profile')
+        fields = (
+            'id',
+            'email',
+            'first_name',
+            'last_name',
+            'profile'
+        )
 
     def update(self, instance, validated_data):
         profile = validated_data.pop('profile')

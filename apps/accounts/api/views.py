@@ -1,7 +1,7 @@
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.models import User
 from rest_framework import status
-from rest_framework.generics import RetrieveUpdateAPIView, get_object_or_404, CreateAPIView
+from rest_framework.generics import RetrieveUpdateAPIView, get_object_or_404, CreateAPIView, UpdateAPIView, RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -12,7 +12,7 @@ from apps.accounts.api.serializers import UserSerializer, ChangePasswordSerializ
 from apps.accounts.api.throttles import RegisterThrottle
 
 
-class ProfileView(RetrieveUpdateAPIView):
+class ProfileView(RetrieveAPIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = UserSerializer
     queryset = User.objects.all()
@@ -21,9 +21,6 @@ class ProfileView(RetrieveUpdateAPIView):
         queryset = self.get_queryset()
         obj = get_object_or_404(queryset, id = self.request.user.id)
         return obj
-
-    def perform_update(self, serializer):
-        serializer.save(user = self.request.user)
 
 
 class UpdatePasswordView(APIView):
@@ -56,3 +53,17 @@ class CreateUserView(CreateAPIView):
     model = User.objects.all()
     serializer_class = RegisterSerializer
     permission_classes = [NotAuthenticated]
+
+
+class UpdateProfileView(UpdateAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        obj = get_object_or_404(queryset, id=self.request.user.id)
+        return obj
+
+    def perform_update(self, serializer):
+        serializer.save(user=self.request.user)
