@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "19b35e7b-032c-4ce8-8b0e-8bdf85d8406a",
+		"name": "Node Me",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14931585"
+	},
+	"item": [
+		{
+			"name": "Me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyNDcyNTYzLCJpYXQiOjE2OTI0Njg5NjMsImp0aSI6IjVhMDEwZmQ5YmEyYzRhMjc4NjI4ZTRhNThhNzk1YWQ4IiwidXNlcl9pZCI6M30.mb2PnkEVHsWe6puwTc_K8LWwQrh-cXwKEO-lANMytQM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/account/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
