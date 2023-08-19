@@ -5,6 +5,12 @@
 * Database: PostgreSQL
 * Web Server: NGINX (Serve Static Files)
 * Containerization: Docker
+* Version Control: Git
+* Version Control Hosting: GitHub
+* API Documentation: Self Describing APIs Documentation, Swagger, Redoc, Postman Collection
+
+## To Do
+* CI/CD: GitHub Actions
 
 ## Tools
 * black -> pip install black, black views.py
