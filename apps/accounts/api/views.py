@@ -7,9 +7,9 @@ from rest_framework.response import Response
 
 from rest_framework.views import APIView
 
-from account.api.permissions import NotAuthenticated
-from account.api.serializers import UserSerializer, ChangePasswordSerializer, RegisterSerializer
-from account.api.throttles import RegisterThrottle
+from apps.accounts.api.permissions import NotAuthenticated
+from apps.accounts.api.serializers import UserSerializer, ChangePasswordSerializer, RegisterSerializer
+from apps.accounts.api.throttles import RegisterThrottle
 
 
 class ProfileView(RetrieveUpdateAPIView):
@@ -26,7 +26,7 @@ class ProfileView(RetrieveUpdateAPIView):
         serializer.save(user = self.request.user)
 
 
-class UpdatePassword(APIView):
+class UpdatePasswordView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def get_object(self):
@@ -51,8 +51,6 @@ class UpdatePassword(APIView):
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
 
-
-# Create user
 class CreateUserView(CreateAPIView):
     throttle_classes = [RegisterThrottle]
     model = User.objects.all()
