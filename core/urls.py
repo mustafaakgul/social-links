@@ -23,6 +23,8 @@ from drf_spectacular.views import (
     SpectacularRedocView
 )
 
+from apps.common.views import HomeView
+
 
 urlpatterns = [
     path('api/v1/schema/', SpectacularAPIView.as_view(), name='schema'),
@@ -35,5 +37,6 @@ urlpatterns = [
     path('api/v1/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 
     # App's Endpoints
+    path('api/v1/home/', HomeView.as_view(), name='home'),
     path('api/v1/account/', include('apps.accounts.api.urls')),
 ]

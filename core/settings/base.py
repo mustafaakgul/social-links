@@ -47,11 +47,13 @@ INSTALLED_APPS = [
     'apps.accounts',
 
     # 3rd Party Apps
+    'corsheaders',
     'drf_spectacular',
     'rest_framework',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -160,5 +162,10 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME' : timedelta(minutes=60)
+    'ACCESS_TOKEN_LIFETIME' : timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME' : timedelta(days=1),
 }
+
+
+# CORS Settings
+CORS_ORIGIN_ALLOW_ALL = True

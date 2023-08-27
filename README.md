@@ -52,6 +52,7 @@
 * Track, https://treblle.com/
 * https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/
 * https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design
+* rotating refresh token, blacklist, customizing token claims
 
 ## Tools
 * black -> pip install black, black views.py
