@@ -9,11 +9,12 @@
 * Git Management -> .gitignore
 * Version Control Hosting: GitHub
 * API Documentation: Self Describing (Browsable) APIs Documentation, Swagger, Redoc, Postman Collection -> https://www.django-rest-framework.org/topics/documenting-your-api/
-* Authentication & Authorization: JWT -> https://jwt.io/
+* Authentication & Authorization: JWT -> https://jwt.io/, Other: OAuth, Auth Token, Basic Authentication, Session Authentication, Token Authentication, JWT Authentication, RemoteUserAuthentication, SessionAuthentication, CustomAuthentication
 * Package Installer -> PIP
 * Dependency Management -> Virtualenv
 * Dependencies -> requirements.txt
 * Project Description -> README.md
+* LICENSE
 * Views -> https://www.django-rest-framework.org/api-guide/views/, Function-Based Views, Class Based (APIView, Generic Views, Mixins)
 * Serializers -> https://www.django-rest-framework.org/api-guide/serializers/
 * Permissions -> https://www.django-rest-framework.org/api-guide/permissions/
