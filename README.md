@@ -16,6 +16,7 @@
 * Project Description -> README.md
 * LICENSE
 * Views -> https://www.django-rest-framework.org/api-guide/views/, Function-Based Views, Class Based (APIView, Generic Views, Mixins)
+* Generic Views & Mixins -> https://www.django-rest-framework.org/api-guide/generic-views/
 * Serializers -> https://www.django-rest-framework.org/api-guide/serializers/
 * Permissions -> https://www.django-rest-framework.org/api-guide/permissions/
 * Routers -> https://www.django-rest-framework.org/api-guide/routers/
