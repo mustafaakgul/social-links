@@ -2,6 +2,7 @@ from django.db import models
 
 from apps.accounts.models import Profile
 from apps.common.models import CoreModel
+from apps.tags.models import Tag
 
 SOCIAL_ACCOUNTS = [
     ("website", "Website"),
@@ -58,10 +59,10 @@ class Link(CoreModel):
     )
     title = models.CharField(max_length=255, choices=SOCIAL_ACCOUNTS)
     url = models.URLField(max_length=255)
-    #tags = models.ManyToManyField("links.Tag", related_name="links", blank=True)
+    tags = models.ManyToManyField(Tag, related_name="links", blank=True)
 
     class Meta:
         ordering = ["-id"]
 
     def __str__(self):
-        return self.title
+        return self.url

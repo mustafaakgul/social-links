@@ -12,11 +12,14 @@
 * Views -> https://www.django-rest-framework.org/api-guide/views/
 * Serializers -> https://www.django-rest-framework.org/api-guide/serializers/
 * Permissions -> https://www.django-rest-framework.org/api-guide/permissions/
-* Status Codes -> https://www.django-rest-framework.org/api-guide/status-codes/
 * Routers
 * Throttling
 
-## To Do
+## Tools
+* black -> pip install black, black views.py
+* flake8 -> pip install flake8, flake8 views.py
+
+## TODO
 * CI/CD: GitHub Actions
 * Localization
 * AWS
@@ -33,6 +36,7 @@
 * Shell
 * Testing, Selenium, JMeter, Django testing with pytest -> see localhost 5500/htmlcon see code coverage
 * ElasticSearch
+* Status Codes -> https://www.django-rest-framework.org/api-guide/status-codes/
 * https://www.django-rest-framework.org/api-guide/views/#function-based-views, API View, Generic View, Function Based
 * Views / Viewsets / Generic Views / API View / Model ViewSets: Class and Function Based
 * Create an endpoint with normal api line by line
@@ -54,14 +58,12 @@
 * https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design
 * rotating refresh token, blacklist, customizing token claims
 
-## Tools
-* black -> pip install black, black views.py
-* flake8 -> pip install flake8, flake8 views.py
-
 ## How to Run
 ### Docker
 * Docker: docker-compose up --build
 ### Django
   * python manage.py makemigrations
-    * python manage.py migrate
-    * python manage.py runserver
+  * python manage.py migrate
+  * python manage.py collectstatic
+  * python manage.py createsuperuser
+  * python manage.py runserver

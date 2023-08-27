@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # Local Apps
     'apps.accounts',
     'apps.links',
+    'apps.tags',
 
     # 3rd Party Apps
     'corsheaders',
