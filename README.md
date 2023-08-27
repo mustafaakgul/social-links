@@ -1,5 +1,5 @@
 # Tech Stack
-* Programming Lang: Python
+* Programming Language: Python
 * Web Framework: Django
 * REST Framework: Django Rest Framework -> https://www.django-rest-framework.org/
 * Database: PostgreSQL
