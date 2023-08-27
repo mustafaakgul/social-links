@@ -39,5 +39,6 @@ urlpatterns = [
     # App's Endpoints
     path('api/v1/home/', HomeView.as_view(), name='home'),
     path('api/v1/accounts/', include('apps.accounts.api.urls')),
+    path('api/v1/links/', include('apps.links.api.urls')),
     path('api/v1/tags/', include('apps.tags.api.urls')),
 ]
