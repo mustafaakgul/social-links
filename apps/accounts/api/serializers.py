@@ -4,9 +4,24 @@ from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer, Serializer
 
 from apps.accounts.models import Profile
+from apps.links.models import Link
+
+
+class LinkSerializer(ModelSerializer):
+
+    class Meta:
+        model = Link
+        fields = (
+            'id',
+            'title',
+            'url',
+        )
 
 
 class ProfileSerializer(ModelSerializer):
+    links = LinkSerializer(many=True)
+    depth = 3
+
     class Meta:
         model = Profile
         fields = (
@@ -14,26 +29,23 @@ class ProfileSerializer(ModelSerializer):
             'bio',
             'birth_date',
             'location',
-            'website',
-            'linkedin',
-            'instagram',
-            'tiktok',
-            'twitter',
-            'facebook'
+            'links',
         )
 
 
 class UserSerializer(ModelSerializer):
     profile = ProfileSerializer()
+    depth = 3
 
     class Meta:
         model = User
         fields = (
             'id',
+            'username',
             'email',
             'first_name',
             'last_name',
-            'profile'
+            'profile',
         )
 
     def update(self, instance, validated_data):

@@ -15,43 +15,8 @@ class Profile(CoreModel):
     location = models.CharField(blank=True, null=True, max_length=100)
 
     # Social Accounts
-    website = models.URLField(blank=True)
-    linkedin = models.URLField(blank=True)
+    # Link Model
 
-    instagram = models.URLField(blank=True)
-    tiktok = models.URLField(blank=True)
-    twitter = models.URLField(blank=True)
-    facebook = models.URLField(blank=True)
-
-    # github = models.URLField(blank=True)
-    # youtube = models.URLField(blank=True)
-    # medium = models.URLField(blank=True)
-    # reddit = models.URLField(blank=True)
-    # stackoverflow = models.URLField(blank=True)
-    # discord = models.URLField(blank=True)
-    # twitch = models.URLField(blank=True)
-    # steam = models.URLField(blank=True)
-    # spotify = models.URLField(blank=True)
-    # pinterest = models.URLField(blank=True)
-    # snapchat = models.URLField(blank=True)
-    # tumblr = models.URLField(blank=True)
-    # vimeo = models.URLField(blank=True)
-    # whatsapp = models.URLField(blank=True)
-    # telegram = models.URLField(blank=True)
-    # skype = models.URLField(blank=True)
-    # quora = models.URLField(blank=True)
-    # soundcloud = models.URLField(blank=True)
-    # github_gist = models.URLField(blank=True)
-    # dribbble = models.URLField(blank=True)
-    # behance = models.URLField(blank=True)
-    # devto = models.URLField(blank=True)
-    # codepen = models.URLField(blank=True)
-    # foursquare = models.URLField(blank=True)
-    # goodreads = models.URLField(blank=True)
-    # hackernews = models.URLField(blank=True)
-    # keybase = models.URLField(blank=True)
-    # kaggle = models.URLField(blank=True)
-    # lastfm = models.URLField(blank=True)
 
     class Meta:
         ordering = ["-id"]
