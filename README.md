@@ -3,7 +3,7 @@
 * Web Framework: Django
 * REST Framework: Django Rest Framework -> https://www.django-rest-framework.org/
 * Database: PostgreSQL
-* Web Server: NGINX (Serve Static Files)
+* Web Server: NGINX (Serving Static Files)
 * Containerization: Docker
 * Version Control: Git
 * Version Control Hosting: GitHub
