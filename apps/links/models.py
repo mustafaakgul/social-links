@@ -53,13 +53,25 @@ SOCIAL_ACCOUNTS = [
 ]
 
 
+class SocialNetwork(CoreModel):
+    network = models.CharField(max_length=255, choices=SOCIAL_ACCOUNTS)
+    base_url = models.URLField(max_length=255)
+    tags = models.ManyToManyField(Tag, related_name="social_networks", blank=True)
+
+    class Meta:
+        ordering = ["-id"]
+
+    def __str__(self):
+        return self.network
+
+
 class Link(CoreModel):
     profile = models.ForeignKey(
         Profile, on_delete=models.PROTECT, related_name="links"
     )
-    title = models.CharField(max_length=255, choices=SOCIAL_ACCOUNTS)
+    title = models.OneToOneField(SocialNetwork, on_delete=models.PROTECT, related_name="link")
     url = models.URLField(max_length=255)
-    tags = models.ManyToManyField(Tag, related_name="links", blank=True)
+    # tags = models.ManyToManyField(Tag, related_name="links", blank=True)
 
     class Meta:
         ordering = ["-id"]
