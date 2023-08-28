@@ -2,6 +2,7 @@ from apps.tags.models import Tag
 from rest_framework.generics import get_object_or_404, ListAPIView
 
 from apps.tags.api.serializers import TagSerializer
+from apps.tags.api.pagination import TagPagination
 from apps.links.api.serializers import SocialNetworkSerializer
 
 
@@ -15,6 +16,7 @@ class TagView(ListAPIView):
 
 class TagQueryParamsView(ListAPIView):
     serializer_class = TagSerializer
+    # pagination_class = TagPagination
 
     def get_queryset(self):
         queryset = Tag.objects.filter(status=True)
