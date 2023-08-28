@@ -68,6 +68,34 @@
 * https://djangostars.com/blog/rest-apis-django-development/
 * https://medium.com/crowdbotics/how-to-write-an-api-in-3-lines-of-code-with-django-rest-framework-59b0971edfa4
 
+## Best Practices
+* Client-Server Architecture
+* Ensure that the API scales
+* Use an international design standard The OpenAPI v3
+* Cacheable
+* Stateless
+* Use Nouns Instead of Verbs in Endpoints -> https://mysite.com/posts not https://mysite.com/createPost
+* Don't use POST: /articles/createNewArticle/ Do use POST: /articles/
+* Name Collections with Plural Nouns -> So, instead of https://mysite.com/post/123, it should be https://mysite.com/posts/123, GET /cars/123, POST /cars, GET /cars
+* Use Status Codes in Error Handling -> Informational Responses, Redirects, Client-side errors, Server-side errors
+* Use Nesting on Endpoints to Show Relationships -> https://mysite.com/posts/postId/comments, You should avoid nesting that is more than 3 levels deep as this can make the API less elegant and readable
+* Use Filtering, Sorting, and Pagination to Retrieve the Data Requested -> https://mysite.com/posts?sortBy=createdAt&sortOrder=desc&limit=10&offset=0
+* Use SSL for Security -> https://mysite.com/posts
+* Be Clear with Versioning -> https://mysite.com/v2 for version 2
+* Return Error Details in the Response Body -> 
+    {
+    "error": "Invalid payload.",
+    "detail": {
+        "surname": "This field is required."
+    }
+}
+* Provide Accurate API Documentation -> 
+  * The documentation should contain:
+    * relevant endpoints of the API
+    * example requests of the endpoints
+    * implementation in several programming languages
+    * messages listed for different errors with their status codes
+
 ## Tools
 * black -> pip install black, black views.py
 * flake8 -> pip install flake8, flake8 views.py
