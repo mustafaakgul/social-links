@@ -13,6 +13,17 @@ class TagView(ListAPIView):
         return Tag.objects.filter(status=True)
 
 
+class TagQueryParamsView(ListAPIView):
+    serializer_class = TagSerializer
+
+    def get_queryset(self):
+        queryset = Tag.objects.filter(status=True)
+        name = self.request.query_params.get('name', None)
+        if name is not None:
+            queryset = queryset.filter(name__icontains=name)
+        return queryset
+
+
 class TagsNetworkView(ListAPIView):
     serializer_class = SocialNetworkSerializer
 

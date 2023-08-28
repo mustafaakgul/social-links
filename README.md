@@ -21,7 +21,7 @@
 * Permissions -> https://www.django-rest-framework.org/api-guide/permissions/
 * Routers -> https://www.django-rest-framework.org/api-guide/routers/
 * Throttling -> https://www.django-rest-framework.org/api-guide/throttling/
-* Filtering -> https://www.django-rest-framework.org/api-guide/filtering/
+* Filtering -> https://www.django-rest-framework.org/api-guide/filtering/, Query Params:Query String, Search Filter
 
 ## Tools
 * black -> pip install black, black views.py
