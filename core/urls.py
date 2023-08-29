@@ -25,8 +25,13 @@ from drf_spectacular.views import (
 
 from apps.common.views import HomeView, AboutView
 
+# api/v1/... -> Semantic Versioning 1.0.0 MAJOR.MINOR.PATCH
 
 urlpatterns = [
+    # Versioning
+    # path('api/v2/', include(('your_app.urls', 'your_app'), namespace='v1')),
+    # path('api/v3/', include(('your_app_v2.urls', 'your_app_v2'), namespace='v2')),
+
     path('api/v1/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/v1/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/v1/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
