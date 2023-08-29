@@ -108,6 +108,64 @@
 * Validation and Error Handling -> DRF provides comprehensive validation tools to ensure data integrity. Handle errors gracefully and provide meaningful error responses to API consumers.
 * Optimizing Database Queries -> Avoid the N+1 query problem by using DRF’s queryset optimization techniques like select_related and prefetch_related to minimize database queries.
 
+## Structure
+myproject_website/
+├── commands/
+├── db_backups/
+├── mockups/
+├── src/
+│   └── django-myproject/
+│       ├── externals/
+│       │   ├── apps/
+│       │   │   └── README.md
+│       │   └── libs/
+│       │       └── README.md
+│       ├── locale/
+│       ├── media/
+│       ├── myproject/
+│       │   ├── apps/
+│       │   │   ├── core/
+│       │   │   │   ├── __init__.py
+│       │   │   │   └── versioning.py
+│       │   │   └── __init__.py
+│       │   ├── settings/
+│       │   │   ├── __init__.py
+│       │   │   ├── _base.py
+│       │   │   ├── dev.py
+│       │   │   ├── production.py
+│       │   │   ├── sample_secrets.json
+│       │   │   ├── secrets.json
+│       │   │   ├── staging.py
+│       │   │   └── test.py
+│       │   ├── site_static/
+│       │   │   └── site/
+│       │   │  django-admin.py startproject myproject     ├── css/
+│       │   │       │   └── style.css
+│       │   │       ├── img/
+│       │   │       │   ├── favicon-16x16.png
+│       │   │       │   ├── favicon-32x32.png
+│       │   │       │   └── favicon.ico
+│       │   │       ├── js/
+│       │   │       │   └── main.js
+│       │   │       └── scss/
+│       │   │           └── style.scss
+│       │   ├── templates/
+│       │   │   ├── base.html
+│       │   │   └── index.html
+│       │   ├── __init__.py
+│       │   ├── urls.py
+│       │   └── wsgi.py
+│       ├── requirements/
+│       │   ├── _base.txt
+│       │   ├── dev.txt
+│       │   ├── production.txt
+│       │   ├── staging.txt
+│       │   └── test.txt
+│       ├── static/
+│       ├── LICENSE
+│       └── manage.py
+└── env/
+
 ## Tools
 * black -> pip install black, black views.py
 * flake8 -> pip install flake8, flake8 views.py
