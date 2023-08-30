@@ -1,8 +1,14 @@
-from django.shortcuts import render
+from django.db import transaction
+from django.shortcuts import render, HttpResponse
+from psycopg2._psycopg import IntegrityError
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class HomeView(APIView):
@@ -16,3 +22,30 @@ class HomeView(APIView):
 @api_view()
 def AboutView(request):
     return Response({'message': 'About Page'})
+
+
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
+
+def trigger_error_exception(request):
+    try:
+        division_by_zero = 1 / 0
+    except Exception as e:
+        logger.exception(e)
+
+
+def loggerDefault(request):
+    try:
+        with transaction.atomic():
+            logging.debug("I am ignored | this is a DEBUG")
+    except IntegrityError:
+        return Response('This example already exists', status=409)
+
+    logging.debug("I am ignored | this is a DEBUG")
+    logging.info("I am a breadcrumb | this is a INFO")
+    logging.warning("An exception | this is WARNING", extra=dict(bar=43, foo=66))
+    logging.error("I am an event | this is ERROR", extra=dict(bar=43))
+    logging.exception("An exception happened")
+
+    return HttpResponse("Se disparo logging por default")

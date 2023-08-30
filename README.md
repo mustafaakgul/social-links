@@ -172,7 +172,8 @@ myproject_website/
 
 ## How to Run
 ### Docker
-* Docker: docker-compose up --build
+* Docker: docker-compose up --build, docker-compose -f docker-compose.dev.yml up --build
+    * docker exec -it name_of_container pytest -rP -vv
 ### Django
   * python manage.py makemigrations
   * python manage.py migrate

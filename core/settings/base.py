@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import environ
 import os
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
 from pathlib import Path
 from datetime import timedelta
 
@@ -63,6 +67,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # 'sentry_sdk.integrations.django.middleware.SentryMiddleware',
 ]
 
 ROOT_URLCONF = "core.urls"
@@ -171,3 +176,99 @@ SIMPLE_JWT = {
 
 # CORS Settings
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+# Sentry Settings
+sentry_sdk.init(
+  dsn=env('SENTRY_DSN'),
+  integrations=[DjangoIntegration()],
+  # If you wish to associate users to errors (assuming you are using
+  # django.contrib.auth) you may enable sending PII data.
+  send_default_pii=True,
+  # Set traces_sample_rate to 1.0 to capture 100%
+  # of transactions for performance monitoring.
+  # We recommend adjusting this value in production.
+  traces_sample_rate=1.0,
+  # Set profiles_sample_rate to 1.0 to profile 100%
+  # of sampled transactions.
+  # We recommend adjusting this value in production.
+  profiles_sample_rate=1.0,
+  environment="dev"
+)
+
+LOGGING = {
+     'version': 1,
+    'handlers': {
+        'sentry': {
+            'level': 'ERROR',
+            'class': 'sentry_sdk.integrations.logging.EventHandler',
+        },
+    },
+    'root': {
+        'handlers': ['sentry'],
+        'level': 'ERROR',
+    },
+}
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": True,
+#     "root": {
+#         "level": "DEBUG",
+#         "handlers": ["sentry"],
+#     },
+#     "formatters": {
+#         "standard": {
+#             "format": "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+#             "datefmt": "%d/%b/%Y %H:%M:%S",
+#         },
+#     },
+#     "handlers": {
+#         "console": {
+#             "level": "INFO",
+#             "class": "logging.StreamHandler",
+#             "formatter": "standard",
+#         },
+#         'sentry': {
+#             "level": "WARNING",
+#             "class": "raven.contrib.django.raven_compat.handlers.SentryHandler",
+#         },
+#     },
+#     "loggers": {
+#         "": {
+#             "level": "DEBUG",
+#             "handlers": ["console"],
+#             'propagate': False,
+#         },
+#         'django': {
+#             'handlers': ['console'],
+#             'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+#             'propagate': False,
+#         },
+#         "django.db.backends": {
+#             "handlers": ["console"],
+#             "level": "DEBUG",
+#             "propagate": False,
+#         },
+#         'proj_djsentry': { # <= base Project
+#             'level': 'WARNING',
+#             'handlers': ['console', 'sentry'],
+#             # required to avoid double logging with root logger
+#             'propagate': False,
+#         },
+#         'raven': {
+#             'level': 'WARNING',
+#             'handlers': ['console',],
+#             'propagate': False,
+#         },
+#         'sentry.errors': {
+#             'level': 'WARNING',
+#             'handlers': ['console'],
+#             'propagate': False,
+#         },
+#         'app_base': {  # <= module name
+#             'level': 'WARNING',
+#             'handlers': ['sentry'],
+#             'propagate': False,
+#         },
+#     },
+# }
