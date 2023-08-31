@@ -1,6 +1,8 @@
-from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth import update_session_auth_hash, logout
 from django.contrib.auth.models import User
+from django.shortcuts import redirect
 from rest_framework import status
+from rest_framework.decorators import permission_classes, api_view
 from rest_framework.generics import RetrieveUpdateAPIView, get_object_or_404, CreateAPIView, UpdateAPIView, RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -67,3 +69,26 @@ class UpdateProfileView(UpdateAPIView):
 
     def perform_update(self, serializer):
         serializer.save(user=self.request.user)
+
+
+class  LogoutView(APIView):
+
+    def get(self, request):
+        try:
+            request.user.auth_token.delete()
+            logout(request)
+            return redirect('home')
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+# @api_view(['POST'])
+# @permission_classes([IsAuthenticated])
+# def user_logout(request):
+#     if request.method == 'POST':
+#         try:
+#             # Delete the user's token to logout
+#             request.user.auth_token.delete()
+#             return Response({'message': 'Successfully logged out.'}, status=status.HTTP_200_OK)
+#         except Exception as e:
+#             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

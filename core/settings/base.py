@@ -54,8 +54,10 @@ INSTALLED_APPS = [
 
     # 3rd Party Apps
     'corsheaders',
+    'django_filters',
     'drf_spectacular',
     'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
 MIDDLEWARE = [
