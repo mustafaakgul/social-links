@@ -2,29 +2,57 @@
 * Programming Language: Python
 * Web Framework: Django
 * REST Framework: Django Rest Framework -> https://www.django-rest-framework.org/
-* Database: PostgreSQL
+* Database: Relational PostgreSQL, NoSQL MongoDB, DynamoDB
 * Web Server: NGINX (Serving Static Files)
 * Containerization: Docker -> Dockerfile, docker-compose.yml
 * Version Control: Git
 * Git Management -> .gitignore
 * Version Control Hosting: GitHub
 * API Documentation: Self Describing (Browsable) APIs Documentation, Swagger, Redoc, Postman Collection -> https://www.django-rest-framework.org/topics/documenting-your-api/
-* Authentication & Authorization: JWT -> https://www.django-rest-framework.org/api-guide/authentication/, https://jwt.io/
+* Authentication & Authorization: JWT -> https://www.django-rest-framework.org/api-guide/authentication/, https://jwt.io/, Claims
   * Other: OAuth2, Auth Token, Basic Authentication, Session Authentication, Token Authentication, JWT Authentication, RemoteUserAuthentication, SessionAuthentication, CustomAuthentication
 * Package Installer -> PIP
 * Dependency Management -> Virtualenv
+* Protecting Resources -> .env
 * Dependencies -> requirements.txt
 * Project Description -> README.md
 * LICENSE
+* Project Management -> Makefile
+* Shell -> python manage.py shell
+* Accounts -> Custom User: Auth Custom User, User Manager
+* Common Models
 * Views -> https://www.django-rest-framework.org/api-guide/views/, Function-Based Views (Line By Line), Class Based Views (APIView, Generic Views, Mixins)
 * Generic Views & Mixins -> https://www.django-rest-framework.org/api-guide/generic-views/
 * Serializers -> https://www.django-rest-framework.org/api-guide/serializers/
 * Permissions -> https://www.django-rest-framework.org/api-guide/permissions/
-* Caching -> https://www.django-rest-framework.org/api-guide/caching/
+* Caching -> Redis, Memcached, https://www.django-rest-framework.org/api-guide/caching/
 * Routers, Rate Limiting -> https://www.django-rest-framework.org/api-guide/routers/
 * Throttling -> https://www.django-rest-framework.org/api-guide/throttling/
 * Filtering -> https://www.django-rest-framework.org/api-guide/filtering/, Query Params:Query String:Query Filter, Search Filter
 * Pagination -> https://www.django-rest-framework.org/api-guide/pagination/
+* Versioning -> https://www.django-rest-framework.org/api-guide/versioning/, https://gearheart.io/articles/api-versioning-with-django-rest-framework/
+* Status Codes -> https://www.django-rest-framework.org/api-guide/status-codes/
+* Internationalization and Localization -> https://www.django-rest-framework.org/api-guide/internationalization/, https://docs.djangoproject.com/en/4.2/topics/i18n/
+* Configuring Celery and RabbitMQ or Redis -> event or processes occur independently and concurrently without blocking the execution of other tasks (async)
+* Searching -> ElasticSearch
+* Payment Gateway, Stripe, Braintree, Native Bank Integration, Iyzico
+* Domain -> Namecheap
+* Testing -> TDD, Pytest, Code Coverage -> https://realpython.com/test-driven-development-of-a-django-restful-api/
+* Tracking, Logging -> https://treblle.com/, (Application Performance Monitoring & Error Tracking), https://sentry.io/for/django/, https://develop.sentry.dev/serializers/, https://docs.sentry.io/product/, https://docs.sentry.io/platforms/python/guides/django/
+* Monitoring -> Prometheus, Grafana
+* Deployment -> AWS, Docker Deployment
+* CI/CD -> GitHub Actions
+* Seeders & Fixtures -> python manage.py loaddata seeds/tags/tags.json
+* Use Custom Response Model -> return Response(
+                                                    {
+                                                        "status": "success",
+                                                        "message": "Tag created successfully",
+                                                        "errors": None,
+                                                        "data": serializer.data
+                                                    },
+                                                    status=status.HTTP_200_OK
+                                                )
+* Exception Handler, Error Handling -> https://www.django-rest-framework.org/api-guide/exceptions/, https://medium.com/turkcell/request-validation-and-custom-exception-handling-in-django-rest-framework-649fddecb415
 
 ## Sources
 ### Core
@@ -40,6 +68,7 @@
 * https://profil-software.com/blog/development/10-things-you-need-know-effectively-use-django-rest-framework/
 * https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/
 * https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design
+* https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/
 * https://document360.com/blog/api-design-best-practices/
 * https://josipmisko.com/posts/rest-api-best-practices
 * https://www.softkraft.co/how-to-build-rest-api-with-django/
@@ -69,8 +98,12 @@
 * https://www.rootstrap.com/blog/django-best-practices-and-beginner-tips
 * https://djangostars.com/blog/rest-apis-django-development/
 * https://medium.com/crowdbotics/how-to-write-an-api-in-3-lines-of-code-with-django-rest-framework-59b0971edfa4
+* https://articles.wesionary.team/preparing-your-django-application-for-production-key-considerations-and-best-practices-6125386df748
 
 ## Best Practices
+* Use Django & DRF Business Logic Layer (Services) to test better
+* Use Layers Presentation Layer (Views), Business Logic Layer (Services), Data Access Layer (Models)
+* Use Custom Response Model
 * Client-Server Architecture
 * Ensure that the API scales
 * Use an international design standard The OpenAPI v3
@@ -107,6 +140,18 @@
 * Versioning Your APIs -> https://mysite.com/v2 for version 2, Implement API versioning from the beginning to ensure backward compatibility as your API evolves. DRF provides easy-to-use tools for versioning, allowing you to handle changes gracefully.
 * Validation and Error Handling -> DRF provides comprehensive validation tools to ensure data integrity. Handle errors gracefully and provide meaningful error responses to API consumers.
 * Optimizing Database Queries -> Avoid the N+1 query problem by using DRF’s queryset optimization techniques like select_related and prefetch_related to minimize database queries.
+* Use UUIDS for Primary Keys -> Use UUIDs instead of auto-incrementing integers for primary keys to avoid exposing internal IDs to API consumers.
+
+### Business Logic Layer (Services)
+* https://emcarrio.medium.com/business-logic-in-a-django-project-a25abc64718c
+* https://jairvercosa.medium.com/business-logic-in-django-projects-7fe700db9b0a
+* https://breadcrumbscollector.tech/how-to-implement-a-service-layer-in-django-rest-framework/
+* https://dev.to/ksaaskil/tips-for-building-a-clean-rest-api-in-django-2pae
+* https://sunscrapers.com/blog/where-to-put-business-logic-django/
+* https://forum.djangoproject.com/t/where-to-put-business-logic-in-django/282/10
+* https://aliashkevich.com/business-logic-in-django-rest-framework-applications/
+* https://stackoverflow.com/questions/30197637/django-rest-framework-business-logic
+* https://www.youtube.com/watch?v=t6qbY_Z02tk
 
 ## Structure
 myproject_website/
