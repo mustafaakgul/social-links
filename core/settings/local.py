@@ -19,4 +19,4 @@ DATABASES = {
 }
 
 
-ALLOWED_HOSTS = ["nodeme-backend-env.eba-6zp3pfnk.eu-central-1.elasticbeanstalk.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1"]
