@@ -48,9 +48,21 @@ class UserSerializer(ModelSerializer):
             'profile',
         )
 
+    # def validate_email(self, value):
+    #     user = self.context['request'].user
+    #     if User.objects.exclude(pk=user.pk).filter(email=value).exists():
+    #         raise serializers.ValidationError({"email": "This email is already in use."})
+    #     return value
+    #
+    # def validate_username(self, value):
+    #     user = self.context['request'].user
+    #     if User.objects.exclude(pk=user.pk).filter(username=value).exists():
+    #         raise serializers.ValidationError({"username": "This username is already in use."})
+    #     return value
+
     def update(self, instance, validated_data):
         profile = validated_data.pop('profile')
-        profile_serializer = ProfileSerializer(instance.profile, data =profile )
+        profile_serializer = ProfileSerializer(instance.profile, data=profile)
         profile_serializer.is_valid(raise_exception=True)
         profile_serializer.save()
         return super(UserSerializer, self).update(instance, validated_data)
