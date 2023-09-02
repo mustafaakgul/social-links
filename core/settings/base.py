@@ -164,6 +164,7 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_CLASSES': (
         'rest_framework.throttling.ScopedRateThrottle',
     ),
+    # 'EXCEPTION_HANDLER': 'myapp.views.custom_exception_handler',
     'DEFAULT_THROTTLE_RATES': {
         'registerthrottle': '5/hour',
         #'hasan' : '5/hour'
@@ -173,6 +174,8 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME' : timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME' : timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True
 }
 
 
