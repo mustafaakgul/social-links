@@ -219,12 +219,32 @@ myproject_website/
 ### Docker
 * Docker: docker-compose up --build, docker-compose -f docker-compose.dev.yml up --build
     * docker exec -it name_of_container pytest -rP -vv
+#### DEV
+* Build the Docker image -> docker build -t nodeme .
+* Push the Docker image to a container registry -> 
+    * aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.eu-central-1.amazonaws.com
+    * docker tag my-django-app:latest aws_account_id.dkr.ecr.us-west-2.amazonaws.com/my-django-app:latest
+    * docker push aws_account_id.dkr.ecr.us-west-2.amazonaws.com/my-django-app:latest
+* Create an Elastic Beanstalk environment -> 
+    * eb init -p docker my-django-app --region us-west-2
+    * eb create my-django-app-env --instance-type t2.micro --region us-west-2
+* Step 5: Deploy your Django application to Elastic Beanstalk -> eb deploy
+
 ### Django
+#### Local
   * python manage.py makemigrations
   * python manage.py migrate
   * python manage.py collectstatic
   * python manage.py createsuperuser
   * python manage.py runserver
+
+#### DEV in AWS Elastic Beanstalk
+* eb init --region eu-central-1 -p python-3.11 nodeme
+* eb create nodeme-env
+* eb logs
+* eb status -> CNAME in allowed_host
+* eb deploy -> to deploy any changes, for instance changed allowed_host
+* eb open
 
 ## TODOs
 * //TODO
