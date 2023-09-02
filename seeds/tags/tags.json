@@ -1,0 +1,142 @@
+[
+  {
+    "model": "tags.Tag",
+    "pk": 1,
+    "fields": {
+      "name": "Music",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 2,
+    "fields": {
+      "name": "Business",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 3,
+    "fields": {
+      "name": "Education",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 4,
+    "fields": {
+      "name": "Gaming",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 5,
+    "fields": {
+      "name": "DIY",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 6,
+    "fields": {
+      "name": "Fashion",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 7,
+    "fields": {
+      "name": "Travel",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 8,
+    "fields": {
+      "name": "Science",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 9,
+    "fields": {
+      "name": "Tech",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 10,
+    "fields": {
+      "name": "Software",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 11,
+    "fields": {
+      "name": "Sport",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 12,
+    "fields": {
+      "name": "Art",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 13,
+    "fields": {
+      "name": "Social Media",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  },
+  {
+    "model": "tags.Tag",
+    "pk": 14,
+    "fields": {
+      "name": "Beauty",
+      "status": true,
+      "created_at": "2023-09-01T00:00:00.000Z",
+      "modified_at": "2023-09-01T00:00:00.000Z"
+    }
+  }
+]
