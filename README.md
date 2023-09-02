@@ -240,6 +240,7 @@ myproject_website/
 
 #### DEV in AWS Elastic Beanstalk
 * deactivate
+* eb --version
 * eb init --region eu-central-1 -p python-3.11 nodeme-backend
 * eb init
 * eb create nodeme-backend-env
