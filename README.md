@@ -244,6 +244,7 @@ myproject_website/
 * eb create nodeme-backend-env
 * eb logs
 * eb status -> CNAME in allowed_host
+* git commit -am "commit message", git push
 * eb deploy -> to deploy any changes, for instance changed allowed_host
 * eb open
 
