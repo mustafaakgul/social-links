@@ -247,6 +247,7 @@ myproject_website/
 * git commit -am "commit message", git push
 * eb deploy -> to deploy any changes, for instance changed allowed_host
 * eb open
+* To save instance hours and other AWS resources between development sessions, terminate your Elastic Beanstalk environment with eb terminate ->eb terminate django-env
 
 ## TODOs
 * //TODO
