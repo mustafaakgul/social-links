@@ -239,6 +239,7 @@ myproject_website/
   * python manage.py runserver
 
 #### DEV in AWS Elastic Beanstalk
+* deactivate
 * eb init --region eu-central-1 -p python-3.11 nodeme
 * eb create nodeme-env
 * eb logs
