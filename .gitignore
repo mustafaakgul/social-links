@@ -95,7 +95,7 @@ fabric.properties
 # Custom
 # .env
 __pycache__
-db.sqlite3
+#db.sqlite3
 *.pyc
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
