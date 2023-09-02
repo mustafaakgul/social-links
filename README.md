@@ -240,8 +240,8 @@ myproject_website/
 
 #### DEV in AWS Elastic Beanstalk
 * deactivate
-* eb init --region eu-central-1 -p python-3.11 nodeme
-* eb create nodeme-env
+* eb init --region eu-central-1 -p python-3.11 nodeme-backend
+* eb create nodeme-backend-env
 * eb logs
 * eb status -> CNAME in allowed_host
 * eb deploy -> to deploy any changes, for instance changed allowed_host
