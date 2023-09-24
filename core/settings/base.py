@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 
-ALLOWED_HOSTS = ["nodeme-backend-env.eba-6zp3pfnk.eu-central-1.elasticbeanstalk.com"]
+ALLOWED_HOSTS = ["nodeme-backend-env.eba-6zp3pfnk.eu-central-1.elasticbeanstalk.com", '*']
 
 
 # Application definition
@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'apps.tags',
 
     # 3rd Party Apps
-    'corsheaders',
+    "corsheaders",
     'django_filters',
     'drf_spectacular',
     'rest_framework',
@@ -61,7 +61,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -185,7 +185,10 @@ SIMPLE_JWT = {
 
 
 # CORS Settings
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000'
+]
 
 
 # Sentry Settings
@@ -207,7 +210,7 @@ sentry_sdk.init(
 )
 
 LOGGING = {
-     'version': 1,
+    'version': 1,
     'handlers': {
         'sentry': {
             'level': 'ERROR',
