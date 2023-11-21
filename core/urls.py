@@ -23,7 +23,7 @@ from drf_spectacular.views import (
     SpectacularRedocView
 )
 
-from apps.common.views import HomeView, AboutView, trigger_error, loggerDefault
+from apps.common.views import HomeView, AboutView, trigger_error, loggerDefault, health_check
 
 # api/v1/... -> Semantic Versioning 1.0.0 MAJOR.MINOR.PATCH
 
@@ -42,6 +42,7 @@ urlpatterns = [
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
     # App's Endpoints
+    path('api/v1/health-check', health_check, name='health_check'),
     path('sentry-debug/', trigger_error),
     path("logging/", loggerDefault, name="app_base_logging"),
     path('api/v1/home/', HomeView.as_view(), name='home'),

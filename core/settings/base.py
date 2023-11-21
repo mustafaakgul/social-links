@@ -187,8 +187,21 @@ SIMPLE_JWT = {
 # CORS Settings
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000'
+    #'http://192.168.1.3:3006',
 ]
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:19000',
+#     'http://192.168.1.3:19000',
+#     'http://192.168.1.50:19000',
+#     'exp://192.168.1.50:19000',
+#     'https://192.168.1.50:19000',
+#     'https://localhost:19000',
+#     'exp://localhost:19000',
+#     'exp://192.168.1.3:19000',
+#     'http://localhost:3000',
+#     'http://localhost:8000',
+#     'http://localhost:8081',
+# ]
 
 
 # Sentry Settings
