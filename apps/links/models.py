@@ -1,6 +1,7 @@
 from django.db import models
 
 from apps.accounts.models import Profile
+from django.contrib.auth.models import User
 from apps.common.models import CoreModel
 from apps.tags.models import Tag
 
@@ -78,3 +79,17 @@ class Link(CoreModel):
 
     def __str__(self):
         return self.url
+
+
+class CustomLink(CoreModel):
+    user = models.ForeignKey(
+        User, on_delete=models.PROTECT, related_name="customlinks"
+    )
+    title = models.CharField(max_length=255)
+    url = models.URLField(max_length=255)
+
+    class Meta:
+        ordering = ["-id"]
+
+    def __str__(self):
+        return self.title
