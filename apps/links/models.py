@@ -70,7 +70,7 @@ class Link(CoreModel):
     profile = models.ForeignKey(
         Profile, on_delete=models.PROTECT, related_name="links"
     )
-    title = models.OneToOneField(SocialNetwork, on_delete=models.PROTECT, related_name="link")
+    title = models.ForeignKey(SocialNetwork, on_delete=models.PROTECT, related_name="link")
     url = models.URLField(max_length=255)
     # tags = models.ManyToManyField(Tag, related_name="links", blank=True)
 
