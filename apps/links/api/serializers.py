@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from apps.links.models import SocialNetwork
+from apps.links.models import SocialNetwork, CustomLink
 
 
 class SocialNetworkSerializer(ModelSerializer):
@@ -11,4 +11,15 @@ class SocialNetworkSerializer(ModelSerializer):
             'id',
             'network',
             'base_url',
+        )
+
+
+class CustomLinkSerializer(ModelSerializer):
+
+    class Meta:
+        model = CustomLink
+        fields = (
+            'id',
+            'title',
+            'url',
         )
