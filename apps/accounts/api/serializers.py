@@ -4,10 +4,24 @@ from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer, Serializer
 
 from apps.accounts.models import Profile
-from apps.links.models import Link
+from apps.links.models import Link, SocialNetwork
+
+
+class SocialNetworkSerializer(ModelSerializer):
+
+    class Meta:
+        model = SocialNetwork
+        fields = (
+            'id',
+            'network',
+            'base_url',
+            'tags'
+        )
 
 
 class LinkSerializer(ModelSerializer):
+    title = SocialNetworkSerializer()
+    depth = 5
 
     class Meta:
         model = Link
@@ -20,7 +34,7 @@ class LinkSerializer(ModelSerializer):
 
 class ProfileSerializer(ModelSerializer):
     links = LinkSerializer(many=True)
-    depth = 3
+    depth = 5
 
     class Meta:
         model = Profile
@@ -35,7 +49,7 @@ class ProfileSerializer(ModelSerializer):
 
 class UserSerializer(ModelSerializer):
     profile = ProfileSerializer()
-    depth = 3
+    depth = 5
 
     class Meta:
         model = User
