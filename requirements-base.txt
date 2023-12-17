@@ -11,6 +11,7 @@ djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
 drf-spectacular==0.26.4
 flake8==6.1.0
+gunicorn==21.2.0
 importlib-metadata==6.9.0
 inflection==0.5.1
 jsonschema==4.19.0
