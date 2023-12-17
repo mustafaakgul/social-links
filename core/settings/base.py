@@ -140,6 +140,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 # STATIC_ROOT = Path(BASE_DIR).joinpath('staticfiles')     ### For Digital Ocean
+# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")      ### For Digital Ocean
 # STATICFILES_DIRS = (Path(BASE_DIR).joinpath('static'),)  ### For Digital Ocean
 
 # STATIC_URL = '/static/'
