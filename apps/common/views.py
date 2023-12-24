@@ -28,8 +28,10 @@ def trigger_error(request):
     division_by_zero = 1 / 0
 
 
+@api_view(['GET'])
 def health_check(request):
-    return HttpResponse("Health Check Status: Stable", status=200)
+    return Response({'message': 'Hello, world!'}, status=200)
+    #return HttpResponse("Health Check Status: Stable", status=200)
 
 
 def trigger_error_exception(request):
