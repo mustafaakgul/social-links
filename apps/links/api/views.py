@@ -1,6 +1,6 @@
 from apps.tags.models import Tag
 from apps.links.models import CustomLink
-from rest_framework.generics import get_object_or_404, ListAPIView
+from rest_framework.generics import get_object_or_404, ListAPIView, ListCreateAPIView
 from rest_framework.views import APIView
 from rest_framework import authentication, permissions
 from rest_framework.response import Response
@@ -21,8 +21,24 @@ class TagView(ListAPIView):
 
 
 class ListCustomLinkView(ListAPIView):
-    serializer_class = CustomLinkSerializer
     queryset = CustomLink.objects.all()
+    serializer_class = CustomLinkSerializer
+    ordering_fields = ['created_at']
+
+    def get_queryset(self):
+        return CustomLink.objects.filter(user=self.request.user)
+
+    def create(self, request, *args, **kwargs):
+        serializer = CustomLinkSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=self.request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class GenericCustomLinkView(ListCreateAPIView):
+    queryset = CustomLink.objects.all()
+    serializer_class = CustomLinkSerializer
     ordering_fields = ['created_at']
 
     def get_queryset(self):
