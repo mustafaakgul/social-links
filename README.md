@@ -102,7 +102,7 @@
 * Githost -> GitHub
 
 ## About Product
-Link in Profile Apps like linktr.ee, linkme, heylink
+Link in Profile Apps like linktr.ee(admin), linkme, heylink
 
 ## Design Samples
 * https://www.figma.com/community/file/1187422022288947321/devlinks-projeto-discover
