@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 
-ALLOWED_HOSTS = ["nodeme-backend-env.eba-6zp3pfnk.eu-central-1.elasticbeanstalk.com", '*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
