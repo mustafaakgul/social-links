@@ -11,6 +11,8 @@ djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
 drf-spectacular==0.26.4
 flake8==6.1.0
+gunicorn==21.2.0
+importlib-metadata==6.9.0
 inflection==0.5.1
 jsonschema==4.19.0
 jsonschema-specifications==2023.7.1
@@ -30,5 +32,9 @@ referencing==0.30.2
 rpds-py==0.9.2
 sentry-sdk==1.30.0
 sqlparse==0.4.4
+tomli==2.0.1
+typing_extensions==4.8.0
 uritemplate==4.1.1
 urllib3==2.0.4
+zipp==3.17.0
+whitenoise==6.6.0

@@ -1,4 +1,11 @@
-# Tech Stack
+# Social Link Project
+
+# Technology Stack - Backend, DevOps
+# Github: https://github.com/features/, https://docs.github.com/en
+* Programs: Chrome, Discord, Figma, Postman, Slack, Trello
+* Cloud Platform: Digital Ocean App Platform
+* IDE: PyCharm -> https://www.jetbrains.com/pycharm/
+* Admin Panel: Django Admin, Postman
 * Programming Language: Python
 * Web Framework: Django
 * REST Framework: Django Rest Framework -> https://www.django-rest-framework.org/
@@ -13,7 +20,7 @@
   * Other: OAuth2, Auth Token, Basic Authentication, Session Authentication, Token Authentication, JWT Authentication, RemoteUserAuthentication, SessionAuthentication, CustomAuthentication
 * Package Installer -> PIP
 * Dependency Management -> Virtualenv
-* Protecting Resources -> .env
+* Protecting Resources -> .env by Local, Dev, Prod
 * Dependencies -> requirements.txt
 * Project Description -> README.md
 * LICENSE
@@ -53,6 +60,63 @@
                                                     status=status.HTTP_200_OK
                                                 )
 * Exception Handler, Error Handling -> https://www.django-rest-framework.org/api-guide/exceptions/, https://medium.com/turkcell/request-validation-and-custom-exception-handling-in-django-rest-framework-649fddecb415
+
+# Technology Stack - Frontend
+* Language -> JavaScript
+* Framework -> React
+* State Management -> Redux
+* UI Framework -> Material UI
+* UI Components -> React Bootstrap
+* UI Design -> Figma
+* AI -> Locofy
+* IDE -> WebStorm - https://www.jetbrains.com/webstorm/
+* .env By Local, Dev, Prod
+* .gitignore
+* Package Installer -> NPM
+
+# Technology Stack - Mobile
+* Language -> JavaScript
+* Framework -> React, React Native
+* State Management -> Redux
+* Mobile Platform -> Expo to iOS, Android
+* Design -> Figma
+* AI -> Locofy
+* IDE -> WebStorm - https://www.jetbrains.com/webstorm/
+* .env By Local, Dev, Prod
+* .gitignore
+
+# Technology Stack - Project Management
+* Project Management -> Trello
+* Project Management Approach -> Agile in Trello
+* Agile Framework -> Scrum, Kanban
+* Agile Methodology -> Sprint
+* Agile Ceremonies -> Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective
+* Agile Artifacts -> Product Backlog, Sprint Backlog, Burndown Chart
+* Agile Roles -> Product Owner, Scrum Master, Development Team
+* Communication -> Discord, Slack
+* Notification -> Slack
+* File Sharing -> Google Drive
+* Documentation -> Notion
+* Design & Boards -> Figma
+* Version Control -> Git
+* Githost -> GitHub
+
+## About Product
+Link in Profile Apps like linktr.ee, linkme, heylink
+
+## Design Samples
+* https://www.figma.com/community/file/1187422022288947321/devlinks-projeto-discover
+* https://www.figma.com/community/file/1279164071673230245/linktree-ui-free-ui-kit-recreated
+* https://www.figma.com/community/file/1140170887273934289/links-ui-design
+* https://www.figma.com/community/file/1289786610304060562/cardu
+* https://www.figma.com/community/file/1192950040338521792/figtree-social-links
+* https://www.figma.com/community/file/846568099968305613/littlelink-template
+* https://www.figma.com/community/file/867431645276958703/build-a-link-in-bio-for-free-community
+* https://www.figma.com/community/file/1135234747622451930/personal-linktree
+* https://www.figma.com/community/file/1063388536323425656/social-network-app-freebies
+
+## Features
+* Health Check
 
 ## Sources
 ### Core
@@ -232,11 +296,16 @@ myproject_website/
 
 ### Django
 #### Local
-  * python manage.py makemigrations
-  * python manage.py migrate
-  * python manage.py collectstatic
-  * python manage.py createsuperuser
-  * python manage.py runserver
+* python -m venv venv
+* source venv/bin/activate
+* pip install -r requirements.txt
+* python manage.py makemigrations
+* python manage.py migrate
+* python manage.py collectstatic
+* python manage.py createsuperuser
+* python manage.py runserver
+* Create .env file from env.base
+* Edit manage.py, wsgi.py, asgi.py for your environment
 
 #### DEV in AWS Elastic Beanstalk
 * deactivate

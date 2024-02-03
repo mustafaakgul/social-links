@@ -5,3 +5,5 @@ from core.settings.base import *
 DEBUG = False
 
 ENVIRONMENT = 'production'
+
+ALLOWED_HOSTS = ['*']

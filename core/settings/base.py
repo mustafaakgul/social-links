@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 
-ALLOWED_HOSTS = ["nodeme-backend-env.eba-6zp3pfnk.eu-central-1.elasticbeanstalk.com", '*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -62,6 +62,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -138,6 +139,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
+# STATIC_ROOT = Path(BASE_DIR).joinpath('staticfiles')     ### For Digital Ocean
+# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")      ### For Digital Ocean
+# STATICFILES_DIRS = (Path(BASE_DIR).joinpath('static'),)  ### For Digital Ocean
 
 # STATIC_URL = '/static/'
 # STATIC_URL = "static/"
@@ -182,6 +186,10 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True
 }
+
+
+# Whitenoise Settings
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # CORS Settings

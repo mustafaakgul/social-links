@@ -42,11 +42,11 @@ urlpatterns = [
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
     # App's Endpoints
-    path('api/v1/health-check', health_check, name='health_check'),
+    path('api/v1/health-check/', health_check, name='health_check'),
     path('sentry-debug/', trigger_error),
     path("logging/", loggerDefault, name="app_base_logging"),
     path('api/v1/home/', HomeView.as_view(), name='home'),
-    path('api/v1/about', AboutView, name='about'),
+    path('api/v1/about/', AboutView, name='about'),
     path('api/v1/accounts/', include('apps.accounts.api.urls')),
     path('api/v1/links/', include('apps.links.api.urls')),
     path('api/v1/tags/', include('apps.tags.api.urls')),
