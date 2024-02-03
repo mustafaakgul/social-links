@@ -102,7 +102,7 @@
 * Githost -> GitHub
 
 ## About Product
-Link in Profile Apps like linktr.ee(admin), linkme, heylink
+Link in Profile Apps like linktr.ee, linkme, heylink
 
 ## Design Samples
 * https://www.figma.com/community/file/1187422022288947321/devlinks-projeto-discover
@@ -296,11 +296,16 @@ myproject_website/
 
 ### Django
 #### Local
-  * python manage.py makemigrations
-  * python manage.py migrate
-  * python manage.py collectstatic
-  * python manage.py createsuperuser
-  * python manage.py runserver
+* python -m venv venv
+* source venv/bin/activate
+* pip install -r requirements.txt
+* python manage.py makemigrations
+* python manage.py migrate
+* python manage.py collectstatic
+* python manage.py createsuperuser
+* python manage.py runserver
+* Create .env file from env.base
+* Edit manage.py, wsgi.py, asgi.py for your environment
 
 #### DEV in AWS Elastic Beanstalk
 * deactivate
