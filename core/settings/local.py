@@ -15,7 +15,7 @@ DATABASES = {
 }
 
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "nodeme-backend-env.eba-6zp3pfnk.eu-central-1.elasticbeanstalk.com", '*']
+ALLOWED_HOSTS = ['*']
 
 
 SIMPLE_JWT = {
